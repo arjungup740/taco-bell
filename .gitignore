@@ -3,3 +3,5 @@
 myenv
 
 *.pkl
+data/
+.DS_Store
