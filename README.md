@@ -5,7 +5,8 @@ What we are seeking to understand
 * how much spread is there when removing hawwaii and alaska?
     * for supreme party packs, not much
 * how much does cost of living in a place explain that spread 
-    * can we get good cost of living metrics
+    * state level analysis
+    * city level analysis
     * can we get good groupings of metropolitan areas vs. non metropolitan areas
 * how does your locale compare to the national average
 
@@ -49,6 +50,7 @@ Data issues to understand
 * missing most states & cities
     * do a catalog of what's missing
 * See how many times your num appearance on menus for common items differs from number of stores in the city
+* $0 items
 
 Note that 2024 is misisng DC, Wisconsin, and Wyoming behavior
 
