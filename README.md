@@ -7,18 +7,24 @@ What we are seeking to understand
 * how much does cost of living in a place explain that spread 
     * state level analysis
     * city level analysis
-    * can we get good groupings of metropolitan areas vs. non metropolitan areas
-* how does your locale compare to the national average
+        * for both of these, not a ton. States it's a little better
+    * if we look at % deviation from mean vs. % deviation from mean for both values and regress those? Would this change anything?
+* how many people are overpaying, and by how much?
+    * can look at you vs. the regression line -- given model not very good, maybe not very relevant
+    * Similarly look at % deviation from mean for each and see what's happening
+    * histogram the % deviations
 
-* can we set this up to do over every menu item
+* can we set this up to do over every menu item to find the ones that vary a lot/a little -- are there any that do have more of connection
 
-* then do for 2024
-* then potentially rescrape for quality/look into if we're getting all the data we should be
+* do for 2024
+* Quality, rescrape questions
+
+
+
+########### thoughts dump
 
 What we have shown so far
 * For supreme taco party packs in 2023, there is perhaps a decent amount of spread. While 80% of prices fall within +/- 15% of the national mean price (assuming this is not that much), from 15% below to 15% above, it's $21 to $29...that is meaningful
-
-########### thoughts dump
 
 Overall findings:
 * prices are remarkably tight, and don't vary drastically on core menu items like crunchwrap supreme
