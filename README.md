@@ -1,11 +1,21 @@
 
 What we are seeking to understand
-* how much spread there 
-* how much more expensive is taco bell in places that are expensive to live vs. places that are cheap to live -- cities/metro areas vs. everything else, and across states
-* how have these changed since 2023?
+* how much spread is there 
+    * for supreme party packs, not much
+* how much spread is there when removing hawwaii and alaska?
+    * for supreme party packs, not much
+* how much does cost of living in a place explain that spread 
+    * can we get good cost of living metrics
+    * can we get good groupings of metropolitan areas vs. non metropolitan areas
 * how does your locale compare to the national average
 
+* can we set this up to do over every menu item
 
+* then do for 2024
+* then potentially rescrape for quality/look into if we're getting all the data we should be
+
+What we have shown so far
+* For supreme taco party packs in 2023, there is perhaps a decent amount of spread. While 80% of prices fall within +/- 15% of the national mean price (assuming this is not that much), from 15% below to 15% above, it's $21 to $29...that is meaningful
 
 ########### thoughts dump
 
@@ -16,6 +26,11 @@ Overall findings:
 
 BACKLOG
 * debug why we only have a small amount of states
+* cost of living by state: 
+    https://www.statista.com/statistics/1240947/cost-of-living-index-usa-by-state/
+    https://worldpopulationreview.com/state-rankings/cost-of-living-index-by-state # can scrape it
+    https://taxfoundation.org/data/all/state/2023-sales-tax-rates-midyear/ # taxes
+
 * try MSA aggregations: https://github.com/chambliss/Major-Metro-Areas-And-Their-Cities
     * compare the micropolitan to the metropolitan
 * matrix of pct differences

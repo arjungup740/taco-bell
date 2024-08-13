@@ -218,6 +218,22 @@ with open('full_df.pkl', 'wb') as file:
 
 full_df.memory_usage(deep=True).sum()
 
+############################################################################# Additional data pulls
+
+import requests
+# state_coli = pd.read_html('https://worldpopulationreview.com/state-rankings/cost-of-living-index-by-state')
+url = 'https://worldpopulationreview.com/state-rankings/cost-of-living-index-by-state'
+
+# Make the HTTP request with SSL verification disabled
+response = requests.get(url, verify=False)
+
+# Load the content into pandas
+tables = pd.read_html(response.text)
+
+state_coli = tables[1]
+
+state_coli.to_csv('/Users/arjungupta/Documents/projects/taco-bell/data/demo_data/world_population_review_coli.csv')
+
    
 
 ############################################################################### general notes

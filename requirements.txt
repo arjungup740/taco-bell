@@ -6,3 +6,6 @@ seaborn
 matplotlib
 plotly
 nbformat
+lxml # this is just to scrape a coli table
+scipy
+adjustText
