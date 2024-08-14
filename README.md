@@ -7,8 +7,8 @@ What we are seeking to understand
 * how much does cost of living in a place explain that spread 
     * state level analysis
     * city level analysis
-        * for both of these, not a ton. States it's a little better
-    * if we look at % deviation from mean vs. % deviation from mean for both values and regress those? Would this change anything?
+        * for both of these, not a ton. States it's a little better ex-hawaii
+    * looking at % deviation from mean vs. % deviation from mean for both values and regress those -- doesn't change anything
 * how many people are overpaying, and by how much?
     * can look at you vs. the regression line -- given model not very good, maybe not very relevant
     * Similarly look at % deviation from mean for each and see what's happening
@@ -16,8 +16,15 @@ What we are seeking to understand
 
 * can we set this up to do over every menu item to find the ones that vary a lot/a little -- are there any that do have more of connection
 
-* do for 2024
 * Quality, rescrape questions
+* do for 2024
+
+* start writing?
+    * 4 components
+        * how much spread is there in prices
+        * how much does cost of living in a place explain that spread
+        * how many people are overpaying, and by how much?
+        * ONCE these 4 are written up, can try setting up to do this over every menu item -- which states are overpaying on 10+ menu items 
 
 
 
@@ -37,6 +44,7 @@ BACKLOG
     https://www.statista.com/statistics/1240947/cost-of-living-index-usa-by-state/
     https://worldpopulationreview.com/state-rankings/cost-of-living-index-by-state # can scrape it
     https://taxfoundation.org/data/all/state/2023-sales-tax-rates-midyear/ # taxes
+    https://catalog.data.gov/dataset/zip-code-data
 
 * try MSA aggregations: https://github.com/chambliss/Major-Metro-Areas-And-Their-Cities
     * compare the micropolitan to the metropolitan
