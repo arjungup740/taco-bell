@@ -1,32 +1,18 @@
+actually do next
+* check which states have low counts and how many left to grab. 
+    Maybe 3 states worth focusing on. And then wisconsin west virgina and wyoming dc left out in the wind
+* dig into which of their locations didn't get scraped
+    * see which full_city_urls are not in full_df's urls. Then take that list and see how that matches up to the state counts and also the error codes. Focus on vermont and maine
+    * honestly, I think they're unscrapeable. Let's move on, and drop vermont, and make a note
+* dig into missingness
 
-What we are seeking to understand
-* how much spread is there 
-    * for supreme party packs, not much
-* how much spread is there when removing hawwaii and alaska?
-    * for supreme party packs, not much
-* how much does cost of living in a place explain that spread 
-    * state level analysis
-    * city level analysis
-        * for both of these, not a ton. States it's a little better ex-hawaii
-    * looking at % deviation from mean vs. % deviation from mean for both values and regress those -- doesn't change anything
-* how many people are overpaying, and by how much?
-    * can look at you vs. the regression line -- given model not very good, maybe not very relevant
-    * Similarly look at % deviation from mean for each and see what's happening
-    * histogram the % deviations
+what we could do next
 
+* check missingness for the menu item you zoomed in on
+* run it for crunchwraps quickly? If you wanted to create a crunchwrap supreme index
+
+* Quality -- 0s, and missing data for 2024 rescrape questions
 * can we set this up to do over every menu item to find the ones that vary a lot/a little -- are there any that do have more of connection
-
-* Quality, rescrape questions
-* do for 2024
-
-* start writing?
-    * 4 components
-        * how much spread is there in prices
-        * how much does cost of living in a place explain that spread
-        * how many people are overpaying, and by how much?
-        * ONCE these 4 are written up, can try setting up to do this over every menu item -- which states are overpaying on 10+ menu items 
-
-
 
 ########### thoughts dump
 

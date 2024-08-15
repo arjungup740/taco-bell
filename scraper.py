@@ -62,7 +62,7 @@ def get_store_id_from_location_url(url, soup, dict_of_store_ids): # get_store_id
     return dict_of_store_ids
 
 def get_indiv_store_raw_data(store_id, one_resto_headers):
-    one_resto = requests.get(f'https://www.tacobell.com/tacobellwebservices/v3/tacobell/products/menu/{store_id}', headers=one_resto_headers)
+    one_resto = requests.get(f'https://www.tacobell.com/tacobellwebservices/v4/tacobell/products/menu/{store_id}', headers=one_resto_headers)
     data = one_resto.json()
 
     return data
@@ -133,6 +133,12 @@ for url in state_urls_df['url']:
     # city_urls_df[city_urls_df['data_count'] == 0]
 full_city_urls_df = pd.concat(full_city_urls_df)
 
+full_city_urls_df['state_url'] = full_city_urls_df['url'].str.extract(r'(https://locations\.tacobell\.com/[a-z]{2})') + '.html'
+counts = full_city_urls_df.groupby('state_url')['data_count'].sum()
+
+qa_table = state_urls_df.merge(counts, how='left', left_on='url', right_on = 'state_url', suffixes=('_true', '_city'))
+qa_table['pct_complete'] = qa_table['data_count_city'] / qa_table['data_count_true']
+
 with open('all_city_urls_df.pkl', 'wb') as file:
     pkl.dump(full_city_urls_df , file)
 
@@ -176,6 +182,8 @@ for url in all_location_urls_df['url']:
 with open('all_store_ids_dict.pkl', 'wb') as file:
     pkl.dump(dict_of_store_ids, file)
 
+store_id_df = pd.DataFrame(list(dict_of_store_ids.items()), columns=['url', 'store_id'])
+store_id_df[~store_id_df['store_id'].str.contains(r'^0')]
 # with open('all_store_ids_dict.pkl', 'rb') as file:
 #     test = pkl.load(file)
 # dict_of_store_ids == test
@@ -237,6 +245,28 @@ state_coli.to_csv('/Users/arjungupta/Documents/projects/taco-bell/data/demo_data
    
 
 ############################################################################### general notes
+
+full_df = full_df.drop_duplicates(subset = ['item_name', 'store_id']) # need this because the same item might be listed under multiple categories
+len(full_df)
+
+full_df['state'], full_df['city'] = zip(*full_df['location_url'].str.split('/').str[3:5])
+scraped_count = full_df.groupby('state')['location_url'].nunique().reset_index().rename(columns={'location_url':'data_count_scraped'})
+
+qa_table['state'] = qa_table['url'].str.split('/').str[3].str.replace('.html', '')
+final_qa = qa_table.merge(scraped_count, how = 'outer', on = 'state')
+final_qa['final_pct_complete'] = final_qa['data_count_scraped'] / final_qa['data_count_true']
+final_qa = final_qa.sort_values(by = 'final_pct_complete')
+
+# see which urls of full_df are not in full_city
+missings = full_city_urls_df[~( full_city_urls_df['url'].isin( full_df['location_url'].unique() ) )]\
+            .merge(store_id_df, how = 'left', on = 'url')#.sum()
+missings.groupby('state_url')['store_id'].nunique()
+
+missings[missings['state_url'].isin(['https://locations.tacobell.com/me.html', 'https://locations.tacobell.com/vt.html'])]
+
+
+
+full_df[full_df['location_url'] == 'https://locations.tacobell.com/al/alabaster.html']
 
 ## some dead links, dig into finding those stores
 # hit error on store_id = E320067, error code = 'menuProductCategories'
