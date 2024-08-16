@@ -1,18 +1,11 @@
-actually do next
-* check which states have low counts and how many left to grab. 
-    Maybe 3 states worth focusing on. And then wisconsin west virgina and wyoming dc left out in the wind
-* dig into which of their locations didn't get scraped
-    * see which full_city_urls are not in full_df's urls. Then take that list and see how that matches up to the state counts and also the error codes. Focus on vermont and maine
-    * honestly, I think they're unscrapeable. Let's move on, and drop vermont, and make a note
-* dig into missingness
+Todo:
+* correlation section
+* overpaying 
 
-what we could do next
 
-* check missingness for the menu item you zoomed in on
-* run it for crunchwraps quickly? If you wanted to create a crunchwrap supreme index
+* mention the states you didn't scrape
+* re-arrange cells to be in the order of the article
 
-* Quality -- 0s, and missing data for 2024 rescrape questions
-* can we set this up to do over every menu item to find the ones that vary a lot/a little -- are there any that do have more of connection
 
 ########### thoughts dump
 
