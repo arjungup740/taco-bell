@@ -1,10 +1,10 @@
 Todo:
-* correlation section
-* overpaying 
-
+* read through the whole thing one more time
+* double check that it's 45 states 
+* re-arrange cells to be in the order of the article
 
 * mention the states you didn't scrape
-* re-arrange cells to be in the order of the article
+
 
 
 ########### thoughts dump
